@@ -1,5 +1,10 @@
+let port: number | null | string | undefined = process.env.PORT;
+if (port === null || port === "") {
+  port = 8000;
+}
+
 export default {
-  port: 1337,
+  port,
   host: "localhost",
   dbUri: "mongodb://localhost:27017/english-for-kids",
   saltWorkFactor: 10,
