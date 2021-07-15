@@ -1,14 +1,11 @@
 import { DB_USER, DB_PASSWORD } from './credentials';
 
-let port: number | null | string | undefined = process.env.PORT;
-if (port === null || port === "") {
-  port = 8000;
-}
+const port: number | null | string | undefined = process.env.PORT;
 
 export default {
-  port,
+  port: port || 8000,
   host: "localhost",
-  dbUri: `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.k2jia.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  dbUri: `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.k2jia.mongodb.net/Cluster0?retryWrites=true&w=majority`,
   saltWorkFactor: 10,
   accessTokenTtl: "15m",
   refreshTokenTtl: "1y",
