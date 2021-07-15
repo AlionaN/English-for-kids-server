@@ -1,3 +1,5 @@
+import { DB_USER, DB_PASSWORD } from './credentials';
+
 let port: number | null | string | undefined = process.env.PORT;
 if (port === null || port === "") {
   port = 8000;
@@ -6,7 +8,7 @@ if (port === null || port === "") {
 export default {
   port,
   host: "localhost",
-  dbUri: "mongodb://localhost:27017/english-for-kids",
+  dbUri: `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.k2jia.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   saltWorkFactor: 10,
   accessTokenTtl: "15m",
   refreshTokenTtl: "1y",
